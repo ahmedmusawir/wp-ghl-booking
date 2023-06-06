@@ -1,4 +1,4 @@
-# React CRUD setup with WP JWT, TypeScript, Tailwind & SCSS
+# Cyberdining Booking POC (Proof Of Concept)
 
 A new version of CRA starter kit with Tailwind and TypeScript
 React Starter with Tailwind &amp; React Router Dom 6x & Daisy UI
