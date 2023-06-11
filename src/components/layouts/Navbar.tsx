@@ -67,7 +67,7 @@ const Navbar = ({ className }: Props) => {
       <div className="navbar-end">
         {state.authIsReady && (
           <>
-            <h5 className="px-2">Logged in as {state.user?.user_nicename}</h5>
+            <h5 className="px-2">Logged in as </h5>
             <br />
             <p className="badge badge-primary">
               {state.user?.user_display_name}
