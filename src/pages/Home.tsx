@@ -3,6 +3,8 @@ import image from "../assets/image-1.jpg";
 import "./Home.scss";
 
 function HomePage() {
+  // console.log(process.env.REACT_APP_GHL_API_KEY);
+
   return (
     <Container className={""} FULL={false} pageTitle={"Home"}>
       <Row className={"prose"}>

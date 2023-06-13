@@ -16,6 +16,7 @@ import MoreInfoPage from "./pages/MoreInfoPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserRegPage from "./pages/UserRegPage";
 import UserProfilePage from "./pages/UserProfilePage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/reg" element={<UserRegPage />} />
               <Route path="/profile" element={<UserProfilePage />} />
               <Route path="/more-info" element={<MoreInfoPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/*" element={<NotFoundPage />} />
             </Routes>
           </Main>

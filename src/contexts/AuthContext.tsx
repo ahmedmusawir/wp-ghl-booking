@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect } from "react";
+import React, { createContext, useReducer, useEffect, useState } from "react";
 import { User } from "../constants";
 
 // Define the type for the authentication state
@@ -62,6 +62,7 @@ export const AuthContextProvider = ({
   children: React.ReactNode;
 }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     // Getting user object from Session Storage
@@ -70,7 +71,7 @@ export const AuthContextProvider = ({
     if (jwtUser) {
       // JSON.parse(storedToken);
       const user: User = JSON.parse(jwtUser);
-      console.log("JWT User from Storage:", user);
+      // console.log("JWT User from Storage:", user);
 
       if (user.token) {
         dispatch({ type: "AUTH_IS_READY", payload: user });
@@ -78,11 +79,12 @@ export const AuthContextProvider = ({
         dispatch({ type: "AUTH_IS_READY", payload: null });
       }
     }
+    setLoading(false); // Set loading state to false
   }, []);
 
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
-      {children}
+      {!loading && children}
     </AuthContext.Provider>
   );
 };

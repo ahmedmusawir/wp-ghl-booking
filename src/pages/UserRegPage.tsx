@@ -18,7 +18,7 @@ const UserRegPage = () => {
   useEffect(() => {
     // REDIRECTING THE USER TO MORE INFO PAGE IF THE USER IS ALREADY LOGGED IN
     if (state.authIsReady) {
-      navigate("/more-info");
+      navigate("/booking");
     }
   }, [state.authIsReady, navigate]);
 

@@ -11,7 +11,8 @@ interface Props {
 const Navbar = ({ className }: Props) => {
   const { state } = useAuthContext();
 
-  console.log("Navber: User:", state.user);
+  // console.log("Navber: User:", state.user);
+  console.log("Auth is ready:", state.authIsReady);
 
   return (
     <div className={`navbar ${className}`}>
@@ -60,7 +61,9 @@ const Navbar = ({ className }: Props) => {
             <Link to={"/reg"}>Booking</Link>
           </li>
 
-          <li>{/* <Link to={"/page-two"}>Page Two</Link> */}</li>
+          <li>
+            <Link to={"/dashboard"}>Dashboard</Link>
+          </li>
           <li>{/* <Link to={"/send-mail"}>EmailJS</Link> */}</li>
         </ul>
       </div>
